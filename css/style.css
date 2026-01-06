@@ -1,11 +1,13 @@
 /* =========================
-   UNIVERSITY BRAND COLORS
+   COLORFUL UNIVERSITY THEME
    ========================= */
 :root {
-    --uni-primary: #7c2d12;   /* Maroon / University tone */
-    --uni-secondary: #b45309;
-    --uni-light: #fef3c7;
-    --uni-dark: #1f2937;
+    --c1: #6366f1;   /* Indigo */
+    --c2: #22c55e;   /* Green */
+    --c3: #f97316;   /* Orange */
+    --c4: #ec4899;   /* Pink */
+    --bg-light: #f8fafc;
+    --bg-dark: #020617;
 }
 
 /* RESET */
@@ -14,40 +16,42 @@
     scroll-behavior: smooth;
 }
 
-/* CLASSIC LIGHT */
+/* LIGHT COLORFUL BACKGROUND */
 body {
     margin: 0;
-    font-family: "Georgia", "Times New Roman", serif;
+    font-family: "Georgia", serif;
     background:
-        radial-gradient(circle at top left, #fff7ed 0%, transparent 40%),
-        radial-gradient(circle at bottom right, #fef3c7 0%, transparent 40%),
-        linear-gradient(180deg, #fffdf9 0%, #f9fafb 100%);
+        radial-gradient(circle at top left, #dbeafe, transparent 40%),
+        radial-gradient(circle at top right, #fce7f3, transparent 40%),
+        radial-gradient(circle at bottom left, #dcfce7, transparent 40%),
+        linear-gradient(180deg, #ffffff, #f8fafc);
     color: #1f2937;
     line-height: 1.7;
     transition: all 0.3s ease;
 }
 
-/* DARK CLASSIC */
+/* DARK COLORFUL */
 body.dark {
     background:
-        radial-gradient(circle at top left, #111827 0%, transparent 40%),
-        radial-gradient(circle at bottom right, #020617 0%, transparent 40%);
+        radial-gradient(circle at top left, #312e81, transparent 40%),
+        radial-gradient(circle at top right, #064e3b, transparent 40%),
+        radial-gradient(circle at bottom left, #7c2d12, transparent 40%),
+        linear-gradient(180deg, #020617, #020617);
     color: #e5e7eb;
 }
 
 /* NAVBAR */
 .navbar {
-    background: var(--uni-primary);
+    background: linear-gradient(90deg, var(--c1), var(--c4));
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 14px 20px;
     position: sticky;
     top: 0;
-    z-index: 1000;
 }
 .logo {
-    color: #fff;
+    color: white;
     font-weight: bold;
 }
 .nav-links {
@@ -56,12 +60,8 @@ body.dark {
     list-style: none;
 }
 .nav-links a {
-    color: #fff;
+    color: white;
     text-decoration: none;
-}
-.nav-actions {
-    display: flex;
-    gap: 15px;
 }
 #themeToggle {
     background: none;
@@ -74,7 +74,6 @@ body.dark {
     display: none;
     font-size: 22px;
     color: white;
-    cursor: pointer;
 }
 
 /* HERO */
@@ -88,21 +87,22 @@ body.dark {
     padding: 60px 20px;
     background: linear-gradient(
         135deg,
-        var(--uni-primary),
-        var(--uni-secondary)
+        var(--c1),
+        var(--c2),
+        var(--c3)
     );
-    color: #fff;
+    color: white;
 }
 
 /* BUTTON */
 .btn {
-    padding: 12px 26px;
-    background: var(--uni-light);
-    color: var(--uni-primary);
-    border-radius: 6px;
+    padding: 12px 28px;
+    background: white;
+    color: #1e293b;
+    border-radius: 30px;
     text-decoration: none;
-    font-weight: 500;
-    border: 1px solid #fde68a;
+    font-weight: 600;
+    margin: 10px;
 }
 
 /* SECTIONS */
@@ -112,15 +112,15 @@ body.dark {
     margin: auto;
 }
 
-/* CARD – BOOK PAGE STYLE */
+/* BOOK-PAGE CARD */
 .card {
-    background: #ffffff;
+    background: white;
     padding: 26px;
     margin: 24px auto;
     max-width: 850px;
-    border-left: 6px solid var(--uni-primary);
-    border-radius: 4px;
-    box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+    border-left: 6px solid var(--c1);
+    border-radius: 8px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
 }
 body.dark .card {
     background: #020617;
@@ -128,57 +128,40 @@ body.dark .card {
 
 /* SKILLS */
 .skills {
-    list-style: none;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 12px;
+    gap: 14px;
+    list-style: none;
     padding: 0;
 }
 .skills li {
-    background: var(--uni-light);
-    padding: 10px;
+    background: linear-gradient(135deg, var(--c2), var(--c1));
+    color: white;
+    padding: 12px;
     text-align: center;
-    border-radius: 6px;
-}
-
-/* FORM */
-form {
-    max-width: 450px;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-input, textarea {
-    padding: 10px;
-    border-radius: 6px;
-    border: 1px solid #d1d5db;
+    border-radius: 20px;
 }
 
 /* FOOTER */
 .footer {
-    background: var(--uni-primary);
-    color: #fff;
+    background: linear-gradient(90deg, var(--c4), var(--c1));
+    color: white;
     text-align: center;
     padding: 18px;
 }
 
-/* =========================
-   BOOK PAGE ANIMATION
-   ========================= */
+/* PAGE TURN ANIMATION */
 .page {
-    transform-origin: left center;
     animation: pageTurn 0.8s ease both;
 }
-
 @keyframes pageTurn {
     from {
         opacity: 0;
-        transform: rotateY(-10deg) translateY(30px);
+        transform: rotateY(-12deg) translateY(30px);
     }
     to {
         opacity: 1;
-        transform: rotateY(0deg) translateY(0);
+        transform: rotateY(0) translateY(0);
     }
 }
 
@@ -200,4 +183,15 @@ input, textarea {
         position: absolute;
         top: 60px;
         right: 0;
-        b
+        background: linear-gradient(180deg, var(--c1), var(--c4));
+        flex-direction: column;
+        width: 200px;
+        padding: 15px;
+    }
+    .nav-links.show {
+        display: flex;
+    }
+    .hamburger {
+        display: block;
+    }
+}
