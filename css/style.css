@@ -4,34 +4,31 @@
     scroll-behavior: smooth;
 }
 
-/* LIGHT MODE */
+/* CLASSIC ACADEMIC BACKGROUND */
 body {
     margin: 0;
-    font-family: "Segoe UI", Arial, sans-serif;
-    background: linear-gradient(180deg,#f8fafc,#eef2ff,#ffffff);
+    font-family: "Georgia", "Times New Roman", serif;
+    background:
+        radial-gradient(circle at top left, #f9fafb 0%, transparent 40%),
+        radial-gradient(circle at bottom right, #eef2f7 0%, transparent 40%),
+        linear-gradient(180deg, #fdfefe 0%, #f3f6fb 100%);
     color: #1f2937;
-    transition: background 0.3s, color 0.3s;
-}
-
-/* DARK MODE */
-body.dark {
-    background: linear-gradient(180deg,#020617,#020617,#020617);
-    color: #e5e7eb;
+    line-height: 1.7;
 }
 
 /* NAVBAR */
 .navbar {
+    background: #1f2937;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(31,41,55,0.95);
-    padding: 12px 20px;
+    padding: 14px 20px;
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 .logo {
-    color: white;
+    color: #f8fafc;
     font-weight: bold;
 }
 .nav-links {
@@ -40,25 +37,15 @@ body.dark {
     list-style: none;
 }
 .nav-links a {
-    color: white;
+    color: #e5e7eb;
     text-decoration: none;
-}
-.nav-actions {
-    display: flex;
-    gap: 15px;
-}
-#darkToggle {
-    background: none;
-    border: none;
-    font-size: 20px;
-    cursor: pointer;
-    color: white;
+    font-weight: 500;
 }
 .hamburger {
     display: none;
     font-size: 22px;
+    color: #e5e7eb;
     cursor: pointer;
-    color: white;
 }
 
 /* HERO */
@@ -68,48 +55,61 @@ body.dark {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg,#1e40af,#2563eb);
-    color: white;
     text-align: center;
     padding: 60px 20px;
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    color: #f8fafc;
+}
+.hero h1 {
+    font-size: 2.6rem;
+}
+.hero-buttons {
+    margin-top: 20px;
 }
 
-/* BUTTON */
+/* BUTTONS */
 .btn, .pdf-btn {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 10px 22px;
-    background: white;
-    color: #1e40af;
-    border-radius: 8px;
+    padding: 12px 26px;
+    background: #f8fafc;
+    color: #2c3e50;
+    border-radius: 6px;
     text-decoration: none;
     font-weight: 500;
+    border: 1px solid #d1d5db;
+    display: inline-block;
+    margin-top: 10px;
+}
+.btn:hover, .pdf-btn:hover {
+    background: #e5e7eb;
 }
 
 /* SECTIONS */
 .section {
-    padding: 60px 20px;
+    padding: 70px 24px;
     max-width: 1000px;
     margin: auto;
 }
-
-/* CARD */
-.card {
-    background: rgba(255,255,255,0.9);
-    padding: 20px;
-    margin: 20px auto;
-    border-left: 5px solid #2563eb;
-    border-radius: 10px;
+.section h2 {
+    text-align: center;
+    margin-bottom: 30px;
 }
-body.dark .card {
-    background: rgba(31,41,55,0.9);
+
+/* CARDS */
+.card {
+    background: #ffffff;
+    padding: 22px 24px;
+    margin: 22px auto;
+    max-width: 850px;
+    border-left: 6px solid #2c3e50;
+    border-radius: 6px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
 }
 
 /* SKILLS */
 .skills {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
     list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 12px;
     padding: 0;
 }
@@ -118,9 +118,7 @@ body.dark .card {
     padding: 10px;
     text-align: center;
     border-radius: 6px;
-}
-body.dark .skills li {
-    background: #1f2937;
+    font-weight: 500;
 }
 
 /* FORM */
@@ -134,15 +132,16 @@ form {
 input, textarea {
     padding: 10px;
     border-radius: 6px;
-    border: 1px solid #ccc;
+    border: 1px solid #cbd5e1;
 }
 
 /* FOOTER */
 .footer {
-    background: #1f2933;
-    color: white;
+    background: #111827;
+    color: #d1d5db;
     text-align: center;
-    padding: 15px;
+    padding: 18px;
+    font-size: 14px;
 }
 
 /* ANIMATION */
@@ -163,7 +162,7 @@ input, textarea {
         position: absolute;
         top: 60px;
         right: 0;
-        background: #1f2933;
+        background: #1f2937;
         flex-direction: column;
         width: 200px;
         padding: 15px;
