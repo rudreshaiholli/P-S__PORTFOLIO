@@ -1,57 +1,31 @@
-/* =========================
-   COLORFUL UNIVERSITY THEME
-   ========================= */
-:root {
-    --c1: #6366f1;   /* Indigo */
-    --c2: #22c55e;   /* Green */
-    --c3: #f97316;   /* Orange */
-    --c4: #ec4899;   /* Pink */
-    --bg-light: #f8fafc;
-    --bg-dark: #020617;
-}
-
 /* RESET */
 * {
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
 
-/* LIGHT COLORFUL BACKGROUND */
+/* ===== DAA PROJECT STYLE DARK THEME ===== */
 body {
     margin: 0;
-    font-family: "Georgia", serif;
-    background:
-        radial-gradient(circle at top left, #dbeafe, transparent 40%),
-        radial-gradient(circle at top right, #fce7f3, transparent 40%),
-        radial-gradient(circle at bottom left, #dcfce7, transparent 40%),
-        linear-gradient(180deg, #ffffff, #f8fafc);
-    color: #1f2937;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #0f172a;          /* dark navy */
+    color: #e5e7eb;               /* light text */
     line-height: 1.7;
-    transition: all 0.3s ease;
-}
-
-/* DARK COLORFUL */
-body.dark {
-    background:
-        radial-gradient(circle at top left, #312e81, transparent 40%),
-        radial-gradient(circle at top right, #064e3b, transparent 40%),
-        radial-gradient(circle at bottom left, #7c2d12, transparent 40%),
-        linear-gradient(180deg, #020617, #020617);
-    color: #e5e7eb;
 }
 
 /* NAVBAR */
 .navbar {
-    background: linear-gradient(90deg, var(--c1), var(--c4));
+    background: #020617;          /* very dark */
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 14px 20px;
     position: sticky;
     top: 0;
+    z-index: 1000;
 }
 .logo {
-    color: white;
+    color: #e5e7eb;
     font-weight: bold;
 }
 .nav-links {
@@ -60,23 +34,21 @@ body.dark {
     list-style: none;
 }
 .nav-links a {
-    color: white;
+    color: #c7d2fe;
     text-decoration: none;
+    font-weight: 500;
 }
-#themeToggle {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 18px;
-    cursor: pointer;
+.nav-links a:hover {
+    color: #ffffff;
 }
 .hamburger {
     display: none;
     font-size: 22px;
-    color: white;
+    color: #e5e7eb;
+    cursor: pointer;
 }
 
-/* HERO */
+/* HERO (MATCHES DAA LOOK) */
 .hero {
     min-height: 90vh;
     display: flex;
@@ -87,22 +59,25 @@ body.dark {
     padding: 60px 20px;
     background: linear-gradient(
         135deg,
-        var(--c1),
-        var(--c2),
-        var(--c3)
+        #020617,
+        #1e293b
     );
-    color: white;
+    color: #f8fafc;
 }
 
-/* BUTTON */
+/* BUTTONS */
 .btn {
     padding: 12px 28px;
-    background: white;
-    color: #1e293b;
-    border-radius: 30px;
+    background: #e5e7eb;
+    color: #020617;
+    border-radius: 6px;
     text-decoration: none;
     font-weight: 600;
     margin: 10px;
+    transition: all 0.25s ease;
+}
+.btn:hover {
+    background: #c7d2fe;
 }
 
 /* SECTIONS */
@@ -112,18 +87,15 @@ body.dark {
     margin: auto;
 }
 
-/* BOOK-PAGE CARD */
+/* CARDS (DAA STYLE) */
 .card {
-    background: white;
-    padding: 26px;
-    margin: 24px auto;
-    max-width: 850px;
-    border-left: 6px solid var(--c1);
-    border-radius: 8px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
-}
-body.dark .card {
     background: #020617;
+    padding: 24px;
+    margin: 22px auto;
+    max-width: 850px;
+    border-left: 6px solid #6366f1;
+    border-radius: 8px;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.6);
 }
 
 /* SKILLS */
@@ -135,37 +107,39 @@ body.dark .card {
     padding: 0;
 }
 .skills li {
-    background: linear-gradient(135deg, var(--c2), var(--c1));
-    color: white;
+    background: #1e293b;
     padding: 12px;
     text-align: center;
-    border-radius: 20px;
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+/* FORMS */
+form {
+    max-width: 450px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+input, textarea {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #334155;
+    background: #020617;
+    color: #e5e7eb;
 }
 
 /* FOOTER */
 .footer {
-    background: linear-gradient(90deg, var(--c4), var(--c1));
-    color: white;
+    background: #020617;
+    color: #94a3b8;
     text-align: center;
     padding: 18px;
+    font-size: 14px;
 }
 
-/* PAGE TURN ANIMATION */
-.page {
-    animation: pageTurn 0.8s ease both;
-}
-@keyframes pageTurn {
-    from {
-        opacity: 0;
-        transform: rotateY(-12deg) translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: rotateY(0) translateY(0);
-    }
-}
-
-/* SCROLL FADE */
+/* ANIMATIONS (KEEP YOUR EXISTING ONES) */
 .animate {
     opacity: 0;
     transform: translateY(30px);
@@ -183,7 +157,7 @@ body.dark .card {
         position: absolute;
         top: 60px;
         right: 0;
-        background: linear-gradient(180deg, var(--c1), var(--c4));
+        background: #020617;
         flex-direction: column;
         width: 200px;
         padding: 15px;
