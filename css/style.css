@@ -3,76 +3,81 @@ body {
     font-family: Arial, sans-serif;
 }
 
-.nav ul {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    padding: 15px;
+/* Navbar */
+.navbar {
     background: #222;
 }
-
-.nav a {
+.navbar ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 15px;
+}
+.navbar a {
     color: #fff;
     text-decoration: none;
-    font-weight: bold;
+    margin: 0 15px;
 }
 
+/* Hero */
 .hero {
     text-align: center;
     padding: 60px 20px;
 }
-
-.btn {
-    background: #007ACC;
+.hero .btn {
+    display: inline-block;
+    background: #007bff;
     color: #fff;
-    padding: 10px 18px;
+    padding: 12px 20px;
     margin: 10px;
     text-decoration: none;
     border-radius: 6px;
 }
 
-.cards-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 18px;
-    padding: 20px;
-    justify-items: center;
-}
-
-.card {
-    background: #f7f7f7;
-    padding: 16px;
-    border-radius: 8px;
+/* About */
+.about {
     text-align: center;
+    padding: 40px 20px;
 }
 
-.skills-list {
+/* Projects */
+.projects-list {
+    padding: 20px;
+}
+.projects-list .item {
+    background: #f4f4f4;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+}
+
+/* Skills */
+.skills ul {
     list-style: none;
     padding: 0;
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-    justify-content: center;
+    text-align: center;
+}
+.skills li {
+    margin: 8px 0;
 }
 
-.skills-list li {
-    background: #ededed;
-    padding: 8px 14px;
-    border-radius: 6px;
+/* Contact */
+.contact {
+    text-align: center;
+    padding: 40px 20px;
 }
-
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+.contact form {
     max-width: 400px;
     margin: auto;
+    display: grid;
+    gap: 10px;
 }
 
-.site-footer {
+/* Footer */
+.footer {
     text-align: center;
     padding: 15px;
     background: #222;
-    color: #ccc;
+    color: #fff;
 }
-
