@@ -1,1 +1,78 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.nav ul {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    padding: 15px;
+    background: #222;
+}
+
+.nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.btn {
+    background: #007ACC;
+    color: #fff;
+    padding: 10px 18px;
+    margin: 10px;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 18px;
+    padding: 20px;
+    justify-items: center;
+}
+
+.card {
+    background: #f7f7f7;
+    padding: 16px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.skills-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.skills-list li {
+    background: #ededed;
+    padding: 8px 14px;
+    border-radius: 6px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 400px;
+    margin: auto;
+}
+
+.site-footer {
+    text-align: center;
+    padding: 15px;
+    background: #222;
+    color: #ccc;
+}
 
