@@ -4,7 +4,7 @@
     scroll-behavior: smooth;
 }
 
-/* CLASSIC ACADEMIC BACKGROUND */
+/* ===== LIGHT CLASSIC (DEFAULT) ===== */
 body {
     margin: 0;
     font-family: "Georgia", "Times New Roman", serif;
@@ -14,6 +14,16 @@ body {
         linear-gradient(180deg, #fdfefe 0%, #f3f6fb 100%);
     color: #1f2937;
     line-height: 1.7;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* ===== DARK CLASSIC ===== */
+body.dark {
+    background:
+        radial-gradient(circle at top left, #1f2937 0%, transparent 40%),
+        radial-gradient(circle at bottom right, #111827 0%, transparent 40%),
+        linear-gradient(180deg, #020617 0%, #020617 100%);
+    color: #e5e7eb;
 }
 
 /* NAVBAR */
@@ -39,7 +49,17 @@ body {
 .nav-links a {
     color: #e5e7eb;
     text-decoration: none;
-    font-weight: 500;
+}
+.nav-actions {
+    display: flex;
+    gap: 15px;
+}
+#themeToggle {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #e5e7eb;
 }
 .hamburger {
     display: none;
@@ -60,12 +80,6 @@ body {
     background: linear-gradient(135deg, #2c3e50, #34495e);
     color: #f8fafc;
 }
-.hero h1 {
-    font-size: 2.6rem;
-}
-.hero-buttons {
-    margin-top: 20px;
-}
 
 /* BUTTONS */
 .btn, .pdf-btn {
@@ -79,8 +93,11 @@ body {
     display: inline-block;
     margin-top: 10px;
 }
-.btn:hover, .pdf-btn:hover {
-    background: #e5e7eb;
+body.dark .btn,
+body.dark .pdf-btn {
+    background: #1f2937;
+    color: #e5e7eb;
+    border-color: #374151;
 }
 
 /* SECTIONS */
@@ -104,6 +121,10 @@ body {
     border-radius: 6px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.06);
 }
+body.dark .card {
+    background: #111827;
+    border-left-color: #9ca3af;
+}
 
 /* SKILLS */
 .skills {
@@ -120,6 +141,9 @@ body {
     border-radius: 6px;
     font-weight: 500;
 }
+body.dark .skills li {
+    background: #1f2937;
+}
 
 /* FORM */
 form {
@@ -133,6 +157,12 @@ input, textarea {
     padding: 10px;
     border-radius: 6px;
     border: 1px solid #cbd5e1;
+}
+body.dark input,
+body.dark textarea {
+    background: #020617;
+    color: #e5e7eb;
+    border-color: #374151;
 }
 
 /* FOOTER */
