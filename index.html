@@ -1,99 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Probability & Statistics Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rudresh Aiholli | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar">
-    <div class="logo">P&S Portfolio</div>
-
-    <ul class="nav-links" id="navLinks">
+  <!-- Navbar -->
+  <header>
+    <nav>
+      <h2 class="logo">Rudresh</h2>
+      <ul>
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="#syllabus">Syllabus</a></li>
         <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
-    </ul>
+      </ul>
+    </nav>
+  </header>
 
-    <div class="nav-actions">
-        🌈 <input type="color" id="colorPicker" title="Pick Theme Color">
-        🌙 <button id="themeToggle">Toggle</button>
-        <div class="hamburger" id="hamburger">☰</div>
-    </div>
-</nav>
+  <!-- Home -->
+  <section id="home" class="home">
+    <h1>Hi, I'm <span>Rudresh Aiholli</span></h1>
+    <h3>Computer Science Student</h3>
+    <p>Passionate about coding, problem-solving, and building efficient solutions.</p>
+    <a href="#contact" class="btn">Contact Me</a>
+  </section>
 
-<!-- HERO -->
-<section id="home" class="hero page animate">
-    <h1>Probability & Statistics</h1>
-    <p>Academic Portfolio – Concepts, Applications & Labs</p>
-    <div class="hero-buttons">
-        <a href="#syllabus" class="btn">View Syllabus</a>
-        <a href="#contact" class="btn">Contact</a>
-    </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about" class="section page animate">
-    <h2>About the Course</h2>
-    <p><strong>Course Code:</strong> 24EMAB233</p>
+  <!-- About -->
+  <section id="about" class="section">
+    <h2>About Me</h2>
     <p>
-        This course builds strong foundations in probability,
-        random variables, distributions, and statistical inference.
+      I am Rudresh Aiholli, a Computer Science student with strong foundations in
+      Data Structures, Algorithms, Operating Systems, Databases, and Web Development.
+      I enjoy breaking down complex problems and building clean, efficient solutions.
     </p>
-</section>
+  </section>
 
-<!-- SYLLABUS -->
-<section id="syllabus" class="section page animate">
-    <h2>Syllabus & Topics</h2>
-
-    <div class="card page">
-        <h3>Unit 1: Description of Data</h3>
-        <p>Graphs, mean, median, variance, skewness.</p>
+  <!-- Skills -->
+  <section id="skills" class="section">
+    <h2>Skills</h2>
+    <div class="skill">
+      <span>HTML</span>
+      <div class="bar"><div class="progress html"></div></div>
     </div>
-
-    <div class="card page">
-        <h3>Unit 2: Probability</h3>
-        <p>Rules of probability, Bayes’ theorem.</p>
+    <div class="skill">
+      <span>CSS</span>
+      <div class="bar"><div class="progress css"></div></div>
     </div>
-
-    <div class="card page">
-        <h3>Unit 3: Distributions</h3>
-        <p>Binomial, Poisson, Normal distributions.</p>
+    <div class="skill">
+      <span>JavaScript</span>
+      <div class="bar"><div class="progress js"></div></div>
     </div>
-
-    <div class="card page">
-        <h3>Unit 4: Inference</h3>
-        <p>Sampling, confidence intervals, hypothesis testing.</p>
+    <div class="skill">
+      <span>Python</span>
+      <div class="bar"><div class="progress python"></div></div>
     </div>
-</section>
+    <div class="skill">
+      <span>SQL</span>
+      <div class="bar"><div class="progress sql"></div></div>
+    </div>
+  </section>
 
-<!-- SKILLS -->
-<section id="skills" class="section page animate">
-    <h2>Technical Skills</h2>
-    <ul class="skills">
-        <li>HTML & CSS</li>
-        <li>Python</li>
-        <li>SQL</li>
-        <li>NumPy & Pandas</li>
-        <li>MATLAB</li>
-    </ul>
-</section>
+  <!-- Projects -->
+  <section id="projects" class="section">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="card">
+        <h3>Portfolio Website</h3>
+        <p>Personal responsive portfolio built using HTML, CSS, and JavaScript.</p>
+      </div>
+      <div class="card">
+        <h3>Library Management System</h3>
+        <p>Database project using ER diagrams and relational schemas.</p>
+      </div>
+      <div class="card">
+        <h3>Linux OS Report</h3>
+        <p>Detailed academic report on Linux architecture and file systems.</p>
+      </div>
+    </div>
+  </section>
 
-<!-- CONTACT -->
-<section id="contact" class="section page animate">
+  <!-- Contact -->
+  <section id="contact" class="section">
     <h2>Contact</h2>
-    <p>Email: <a href="mailto:yourmail@example.com">yourmail@example.com</a></p>
-</section>
+    <p>Email: <strong>your-email@example.com</strong></p>
+    <div class="socials">
+      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </section>
 
-<footer class="footer">
-    &copy; 2026 Probability & Statistics Portfolio
-</footer>
+  <footer>
+    <p>© 2026 Rudresh Aiholli</p>
+  </footer>
 
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
