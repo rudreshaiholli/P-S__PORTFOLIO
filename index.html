@@ -1,91 +1,649 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en" data-theme="light" style=""><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name | Academic Portfolio</title>
+    <title>Probability &amp; Statistics Portfolio</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&amp;family=Merriweather:wght@300;400;700&amp;family=Fira+Code:wght@400;500&amp;display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary: #2c3e50;
-            --accent: #3498db;
-            --bg-light: #f4f7f6;
+      :root {
+        --primary: #2c3e50;
+        --secondary: #34495e;
+        --accent: #3498db;
+        --light-bg: #f8f9fa;
+        --code-bg: #f1f3f5;
+        --text: #2c3e50;
+        --border: #e9ecef;
+      }
+
+      body {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 40px;
+        font-family: 'Roboto', sans-serif;
+        color: var(--text);
+        line-height: 1.6;
+        background-color: #fff;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: 'Merriweather', serif;
+        color: var(--primary);
+        margin-top: 1.5em;
+        margin-bottom: 0.5em;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-top: 0;
+        border-bottom: 3px solid var(--accent);
+        padding-bottom: 0.2em;
+      }
+
+      h2 {
+        font-size: 1.8rem;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 0.2em;
+        color: var(--secondary);
+        margin-top: 2rem;
+      }
+
+      h3 {
+        font-size: 1.4rem;
+        color: var(--accent);
+        margin-top: 1.5rem;
+      }
+
+      p {
+        margin-bottom: 1em;
+        text-align: justify;
+      }
+
+      .hero {
+        text-align: center;
+        padding: 3rem 0;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        border-radius: 8px;
+        margin-bottom: 2rem;
+        border: 1px solid var(--border);
+      }
+
+      .hero h1 {
+        border-bottom: none;
+        margin-bottom: 0.2em;
+      }
+
+      .hero .subtitle {
+        font-size: 1.2rem;
+        color: var(--secondary);
+        font-weight: 300;
+        margin-bottom: 1rem;
+      }
+
+      .hero .intro {
+        max-width: 700px;
+        margin: 0 auto;
+        font-style: italic;
+      }
+
+      .card-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+      }
+
+      .card {
+        background: var(--light-bg);
+        padding: 1.5rem;
+        border-radius: 6px;
+        border: 1px solid var(--border);
+      }
+
+      .card h4 {
+        margin-top: 0;
+        color: var(--primary);
+        font-size: 1.1rem;
+      }
+
+      .card ul {
+        margin-bottom: 0;
+        padding-left: 1.2em;
+      }
+
+      .chapter {
+        margin-bottom: 3rem;
+        border: 1px solid var(--border);
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      }
+
+      .chapter-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        border-bottom: 2px solid var(--accent);
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.5rem;
+      }
+
+      .chapter-header h3 {
+        margin: 0;
+        border: none;
+      }
+
+      pre {
+        background-color: var(--code-bg);
+        padding: 1rem;
+        border-radius: 4px;
+        overflow-x: auto;
+        font-family: 'Fira Code', monospace;
+        font-size: 0.85rem;
+        border: 1px solid var(--border);
+        margin: 1.5rem 0;
+      }
+
+      code {
+        font-family: 'Fira Code', monospace;
+      }
+
+      .skills-section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+      }
+
+      .skill-group {
+        margin-bottom: 1.5rem;
+      }
+
+      .skill-bar-container {
+        background-color: #e9ecef;
+        height: 10px;
+        border-radius: 5px;
+        margin-bottom: 0.5rem;
+        overflow: hidden;
+      }
+
+      .skill-bar {
+        height: 100%;
+        background-color: var(--accent);
+      }
+
+      .project-item {
+        border-left: 4px solid var(--accent);
+        padding-left: 1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .contact-info {
+        background-color: var(--primary);
+        color: white;
+        padding: 2rem;
+        border-radius: 8px;
+        text-align: center;
+      }
+
+      .contact-info p {
+        color: #ecf0f1;
+        text-align: center;
+      }
+
+      .badge {
+        display: inline-block;
+        padding: 0.25em 0.6em;
+        font-size: 0.75em;
+        font-weight: 700;
+        line-height: 1;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: baseline;
+        border-radius: 0.25rem;
+        background-color: var(--accent);
+        color: white;
+        margin-right: 0.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      /* Syntax Highlighting Mockup */
+      .token.comment {
+        color: #6a737d;
+      }
+      .token.keyword {
+        color: #d73a49;
+      }
+      .token.string {
+        color: #032f62;
+      }
+      .token.function {
+        color: #6f42c1;
+      }
+      .token.number {
+        color: #005cc5;
+      }
+
+      @media print {
+        body {
+          max-width: 100%;
+          padding: 0;
         }
-        body { padding: 2rem; background-color: var(--bg-light); }
-        .container { max-width: 900px; background: white; padding: 3rem; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        h1 { border-bottom: 4px solid var(--accent); display: inline-block; margin-bottom: 0.5rem; }
-        .badge { background: var(--accent); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.8rem; text-transform: uppercase; }
-        .chapter-card { border: 1px solid #e1e4e8; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem; transition: transform 0.2s; }
-        .chapter-card:hover { transform: translateY(-5px); border-color: var(--accent); }
-        pre { background: #2d3436; color: #fab1a0; padding: 1rem; border-radius: 6px; font-size: 0.9rem; }
-        .skill-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+        .chapter {
+          break-inside: avoid;
+          page-break-inside: avoid;
+        }
+        pre {
+          white-space: pre-wrap;
+          word-wrap: break-word;
+        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body style="">
+    <!-- Hero Section -->
+    <div class="hero">
+      <h1>Probability &amp; Statistics Portfolio</h1>
+      <div class="subtitle">Academic Showcase of Statistical Analysis, Probability Theory, and Data Science</div>
+      <p class="intro">
+        Passionate about uncovering insights through data, probability theory, and statistical modeling. Transforming
+        complex datasets into actionable intelligence through rigorous mathematical analysis and computational methods.
+      </p>
+    </div>
 
-<main class="container">
-    <header style="text-align: center; margin-bottom: 3rem;">
-        <h1>Your Name</h1>
-        <p style="font-size: 1.2rem; color: #7f8c8d;">Data Scientist & Computational Researcher</p>
-        <div class="intro" style="font-style: italic; max-width: 600px; margin: 0 auto;">
-            "Specializing in the intersection of mathematical theory and practical software implementation."
-        </div>
-    </header>
-
+    <!-- About Section -->
     <section>
-        <h2>Academic Focus</h2>
-        <div style="background: #edf2f7; padding: 1rem; border-radius: 8px; margin-bottom: 2rem;">
-            <strong>Major:</strong> Computer Science / Statistics | <strong>Institution:</strong> University Name
+      <h2>About the Course</h2>
+      <div style="background: #f8f9fa; padding: 1rem; border-left: 4px solid #2c3e50; margin-bottom: 2rem">
+        <strong>Course:</strong> Probability &amp; Statistics | <strong>Code:</strong> 24EMAB233 |
+        <strong>Focus:</strong> Advanced Statistical Methods and Computational Analysis
+      </div>
+
+      <div class="card-grid">
+        <div class="card">
+          <h4>Probability Theory</h4>
+          <p style="font-size: 0.9rem">
+            Deep understanding of probability distributions, stochastic processes, and Bayesian inference. Applications
+            in predictive modeling and uncertainty quantification.
+          </p>
         </div>
+        <div class="card">
+          <h4>Statistical Analysis</h4>
+          <p style="font-size: 0.9rem">
+            Expert in hypothesis testing, regression analysis, and inferential statistics. Deriving meaningful insights
+            from complex datasets.
+          </p>
+        </div>
+        <div class="card">
+          <h4>Computational Statistics</h4>
+          <p style="font-size: 0.9rem">
+            Python/R implementations for statistical computing. Advanced data visualization and exploratory data
+            analysis.
+          </p>
+        </div>
+      </div>
     </section>
 
+    <!-- Core Chapters -->
     <section>
-        <h2>Core Competencies</h2>
-        
-        <div class="chapter-card">
-            <div style="display: flex; justify-content: space-between;">
-                <h3>01. Neural Networks</h3>
-                <span class="badge">Deep Learning</span>
-            </div>
-            <p>Exploration of backpropagation, activation functions, and architecture design for CNNs and RNNs.</p>
-            <h5>Code Implementation (PyTorch):</h5>
-            <pre><code>import torch.nn as nn
+      <h2>Core Chapters</h2>
 
-class Net(nn.Module):
-    def __init__(self):
-        super(Net, self).__init__()
-        self.fc1 = nn.Linear(784, 128)
-        self.fc2 = nn.Linear(128, 10)</code></pre>
+      <!-- Chapter 1 -->
+      <div class="chapter">
+        <div class="chapter-header">
+          <h3>Chapter 1: Descriptive Statistics</h3>
+          <span class="badge">Data Analysis</span>
         </div>
+        <p>
+          <strong>Description:</strong> Understanding and summarizing data through measures of central tendency,
+          dispersion, and shape.
+        </p>
+        <p>
+          <strong>Topics covered:</strong> Data types and variables, Measures of central tendency (mean, median, mode),
+          Quartiles and percentiles, Measures of dispersion (variance, std dev), Skewness and kurtosis, Data
+          visualization.
+        </p>
+
+        <h5>Python Implementation:</h5>
+        <pre><code><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<span class="token keyword">import</span> matplotlib.pyplot <span class="token keyword">as</span> plt
+<span class="token keyword">import</span> seaborn <span class="token keyword">as</span> sns
+
+<span class="token comment"># Load dataset</span>
+data = pd.read_csv(<span class="token string">'dataset.csv'</span>)
+
+<span class="token comment"># Descriptive statistics</span>
+mean_val = data[<span class="token string">'values'</span>].mean()
+median_val = data[<span class="token string">'values'</span>].median()
+std_val = data[<span class="token string">'values'</span>].std()
+skewness = data[<span class="token string">'values'</span>].skew()
+
+<span class="token comment"># Visualization</span>
+plt.figure(figsize=(12, 4))
+
+plt.subplot(1, 3, 1)
+plt.hist(data[<span class="token string">'values'</span>], bins=30, edgecolor=<span class="token string">'black'</span>, alpha=0.7)
+plt.title(<span class="token string">'Histogram'</span>)
+plt.xlabel(<span class="token string">'Values'</span>)
+plt.ylabel(<span class="token string">'Frequency'</span>)
+
+plt.subplot(1, 3, 2)
+sns.boxplot(y=data[<span class="token string">'values'</span>])
+plt.title(<span class="token string">'Box Plot'</span>)
+
+plt.subplot(1, 3, 3)
+data[<span class="token string">'values'</span>].plot(kind=<span class="token string">'density'</span>)
+plt.title(<span class="token string">'Density Plot'</span>)
+plt.tight_layout()
+plt.show()
+
+<span class="token function">print</span>(f<span class="token string">"Mean: {mean_val:.2f}, Median: {median_val:.2f}"</span>)
+<span class="token function">print</span>(f<span class="token string">"Std Dev: {std_val:.2f}, Skewness: {skewness:.2f}"</span>)</code></pre>
+      </div>
+
+      <!-- Chapter 2 -->
+      <div class="chapter">
+        <div class="chapter-header">
+          <h3>Chapter 2: Probability Theory</h3>
+          <span class="badge">Theory</span>
+        </div>
+        <p>
+          <strong>Description:</strong> Fundamental concepts of probability, rules, and theorems for quantifying
+          uncertainty.
+        </p>
+        <p>
+          <strong>Topics covered:</strong> Definition of probability, Sample spaces, Addition/Multiplication rules,
+          Conditional probability, Bayes' theorem, Independence.
+        </p>
+
+        <h5>R Implementation (Bayes' Theorem):</h5>
+        <pre><code><span class="token comment"># Probability calculations in R</span>
+<span class="token keyword">library</span>(ggplot2)
+
+<span class="token comment"># Bayes' Theorem Example</span>
+<span class="token comment"># P(Disease|Positive) = P(Positive|Disease) * P(Disease) / P(Positive)</span>
+
+sensitivity &lt;- <span class="token number">0.95</span>  <span class="token comment"># P(Positive|Disease)</span>
+specificity &lt;- <span class="token number">0.90</span>  <span class="token comment"># P(Negative|No Disease)</span>
+prevalence &lt;- <span class="token number">0.01</span>   <span class="token comment"># P(Disease)</span>
+
+<span class="token comment"># Calculate P(Positive)</span>
+p_positive &lt;- sensitivity * prevalence + 
+              (1 - specificity) * (1 - prevalence)
+
+<span class="token comment"># Posterior probability</span>
+p_disease_given_positive &lt;- (sensitivity * prevalence) / p_positive
+
+<span class="token function">cat</span>(<span class="token string">"Probability of disease given positive test:"</span>, 
+    <span class="token function">round</span>(p_disease_given_positive, 4), <span class="token string">"\n"</span>)</code></pre>
+      </div>
+
+      <!-- Chapter 3 -->
+      <div class="chapter">
+        <div class="chapter-header">
+          <h3>Chapter 3: Random Variables &amp; Distributions</h3>
+          <span class="badge">Modeling</span>
+        </div>
+        <p>
+          <strong>Description:</strong> Study of discrete and continuous random variables and their probability
+          distributions.
+        </p>
+        <p>
+          <strong>Topics covered:</strong> Discrete/Continuous variables, PMF/PDF/CDF, Binomial, Poisson, Normal,
+          Exponential, Uniform distributions.
+        </p>
+
+        <h5>Python Implementation (Distributions):</h5>
+        <pre><code><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<span class="token keyword">import</span> matplotlib.pyplot <span class="token keyword">as</span> plt
+<span class="token keyword">from</span> scipy.stats <span class="token keyword">import</span> binom, poisson, norm
+
+<span class="token comment"># Binomial Distribution</span>
+n, p = <span class="token number">20</span>, <span class="token number">0.3</span>  <span class="token comment"># n trials, p probability of success</span>
+x = np.arange(0, n+1)
+pmf = binom.pmf(x, n, p)
+
+plt.figure(figsize=(15, 4))
+
+<span class="token comment"># Binomial Plot code...</span>
+plt.subplot(1, 3, 1)
+plt.bar(x, pmf, alpha=0.7, color=<span class="token string">'steelblue'</span>)
+plt.title(f<span class="token string">'Binomial Distribution (n={n}, p={p})'</span>)
+
+<span class="token comment"># Normal Plot code...</span>
+mu, sigma = <span class="token number">0</span>, <span class="token number">1</span>
+x_normal = np.linspace(-4, 4, 100)
+pdf_normal = norm.pdf(x_normal, mu, sigma)
+
+plt.subplot(1, 3, 3)
+plt.plot(x_normal, pdf_normal, linewidth=2, color=<span class="token string">'green'</span>)
+plt.title(f<span class="token string">'Normal Distribution (μ={mu}, σ={sigma})'</span>)
+plt.tight_layout()
+plt.show()</code></pre>
+      </div>
+
+      <!-- Chapter 4 -->
+      <div class="chapter">
+        <div class="chapter-header">
+          <h3>Chapter 4: Hypothesis Testing</h3>
+          <span class="badge">Inference</span>
+        </div>
+        <p>
+          <strong>Description:</strong> Statistical methods for making inferences and decisions about population
+          parameters.
+        </p>
+        <p>
+          <strong>Topics covered:</strong> Null/Alternative hypotheses, Errors (Type I/II), P-values, Confidence
+          intervals, Z-tests, T-tests, Chi-square, ANOVA.
+        </p>
+
+        <h5>Python Implementation:</h5>
+        <pre><code><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<span class="token keyword">from</span> scipy <span class="token keyword">import</span> stats
+
+<span class="token comment"># One-Sample T-Test</span>
+<span class="token comment"># H0: population mean = 100</span>
+sample_data = np.array([98, 102, 95, 105, 99, 101, 97, 103, 100, 96])
+population_mean = <span class="token number">100</span>
+
+t_statistic, p_value = stats.ttest_1samp(sample_data, population_mean)
+
+<span class="token function">print</span>(<span class="token string">"One-Sample T-Test"</span>)
+<span class="token function">print</span>(f<span class="token string">"T-statistic: {t_statistic:.4f}"</span>)
+<span class="token function">print</span>(f<span class="token string">"P-value: {p_value:.4f}"</span>)
+
+<span class="token comment"># Chi-Square Test</span>
+observed = np.array([[10, 20, 30], [6, 9, 17]])
+chi2, p, dof, expected = stats.chi2_contingency(observed)
+
+<span class="token function">print</span>(<span class="token string">"\nChi-Square Test"</span>)
+<span class="token function">print</span>(f<span class="token string">"Chi-square statistic: {chi2:.4f}"</span>)
+<span class="token function">print</span>(f<span class="token string">"P-value: {p:.4f}"</span>)</code></pre>
+      </div>
+
+      <!-- Chapter 5 -->
+      <div class="chapter">
+        <div class="chapter-header">
+          <h3>Chapter 5: Regression Analysis</h3>
+          <span class="badge">Prediction</span>
+        </div>
+        <p><strong>Description:</strong> Modeling relationships between variables for prediction and inference.</p>
+        <p>
+          <strong>Topics covered:</strong> Simple/Multiple Linear Regression, Least squares, R-squared,
+          Multicollinearity, Logistic Regression, Model evaluation.
+        </p>
+
+        <h5>Python Implementation (Linear Regression):</h5>
+        <pre><code><span class="token keyword">from</span> sklearn.linear_model <span class="token keyword">import</span> LinearRegression
+<span class="token keyword">from</span> sklearn.metrics <span class="token keyword">import</span> r2_score, mean_squared_error
+
+<span class="token comment"># Simple Linear Regression</span>
+np.random.seed(42)
+X = np.random.rand(100, 1) * 10
+y = 2.5 * X.squeeze() + np.random.randn(100) * 2 + 5
+
+<span class="token comment"># Fit model</span>
+model = LinearRegression()
+model.fit(X, y)
+y_pred = model.predict(X)
+
+<span class="token comment"># Metrics</span>
+r2 = r2_score(y, y_pred)
+rmse = np.sqrt(mean_squared_error(y, y_pred))
+
+<span class="token function">print</span>(f<span class="token string">"Coefficient: {model.coef_[0]:.4f}"</span>)
+<span class="token function">print</span>(f<span class="token string">"R-squared: {r2:.4f}"</span>)</code></pre>
+      </div>
     </section>
 
+    <!-- Labs Section -->
     <section>
-        <h2>Technical Toolkit</h2>
-        <div class="skill-grid">
-            <div>
-                <strong>Languages</strong>
-                <ul>
-                    <li>Python (Expert)</li>
-                    <li>C++ (Intermediate)</li>
-                    <li>SQL</li>
-                </ul>
-            </div>
-            <div>
-                <strong>Frameworks</strong>
-                <ul>
-                    <li>TensorFlow / PyTorch</li>
-                    <li>Flask / Django</li>
-                    <li>React.js</li>
-                </ul>
-            </div>
-        </div>
+      <h2>Lab Implementations</h2>
+
+      <div class="card" style="margin-bottom: 1.5rem">
+        <h4>Lab 1: Data Handling &amp; Visualization</h4>
+        <p>
+          Comprehensive Python implementation for data loading, cleaning, and exploratory data analysis using Pandas,
+          Matplotlib, and Seaborn. Visualized distributions and correlations in the Iris dataset.
+        </p>
+      </div>
+
+      <div class="card" style="margin-bottom: 1.5rem">
+        <h4>Lab 2: Probability Distributions</h4>
+        <p>
+          Visualized Binomial, Poisson, Normal, Exponential, and Uniform distributions. Compared theoretical PDFs/PMFs
+          with random sampling simulations to understand the Law of Large Numbers.
+        </p>
+      </div>
+
+      <div class="card" style="margin-bottom: 1.5rem">
+        <h4>Lab 3: Hypothesis Testing</h4>
+        <p>
+          Implemented Z-tests, T-tests (one-sample, independent, paired), Chi-square tests, and ANOVA. Calculated test
+          statistics, p-values, and confidence intervals to draw statistical inferences.
+        </p>
+      </div>
+
+      <div class="card" style="margin-bottom: 1.5rem">
+        <h4>Lab 4: Regression Analysis Projects</h4>
+        <p>
+          End-to-end regression analysis on a student performance dataset. Performed simple and multiple linear
+          regression, checked assumptions (residuals, Q-Q plots), and implemented Logistic Regression for binary
+          classification (Pass/Fail).
+        </p>
+      </div>
     </section>
 
-    <footer style="margin-top: 4rem; text-align: center; border-top: 1px solid #eee; padding-top: 2rem;">
-        <h3>Connect With Me</h3>
-        <p>Email: name@example.com | LinkedIn: linkedin.com/in/username</p>
-    </footer>
-</main>
+    <!-- Technical Skills -->
+    <section>
+      <h2>Technical Skills</h2>
+      <div class="skills-section">
+        <div class="col">
+          <div class="skill-group">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 5px">
+              <strong>Python</strong> <span>95%</span>
+            </div>
+            <div class="skill-bar-container">
+              <div class="skill-bar" style="width: 95%"></div>
+            </div>
+            <small>NumPy, Pandas, SciPy, Matplotlib, Seaborn, statsmodels, scikit-learn</small>
+          </div>
 
-</body>
-</html>
+          <div class="skill-group">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 5px">
+              <strong>R Language</strong> <span>90%</span>
+            </div>
+            <div class="skill-bar-container">
+              <div class="skill-bar" style="width: 90%"></div>
+            </div>
+            <small>ggplot2, dplyr, tidyr, caret</small>
+          </div>
+
+          <div class="skill-group">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 5px">
+              <strong>SQL</strong> <span>85%</span>
+            </div>
+            <div class="skill-bar-container">
+              <div class="skill-bar" style="width: 85%"></div>
+            </div>
+            <small>Queries, Joins, Aggregation</small>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="skill-group">
+            <strong>Statistical Expertise</strong>
+            <ul>
+              <li>Descriptive Statistics &amp; Probability Theory</li>
+              <li>Hypothesis Testing (Z, T, Chi-sq, ANOVA)</li>
+              <li>Regression (Linear, Multiple, Logistic)</li>
+              <li>Bayesian Statistics &amp; Experimental Design</li>
+              <li>Time Series &amp; Statistical Inference</li>
+            </ul>
+          </div>
+
+          <div class="skill-group">
+            <strong>Tools</strong>
+            <div style="margin-top: 0.5rem">
+              <span class="badge">Jupyter</span>
+              <span class="badge">RStudio</span>
+              <span class="badge">Git/GitHub</span>
+              <span class="badge">Tableau</span>
+              <span class="badge">LaTeX</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section>
+      <h2>Projects Showcase</h2>
+
+      <div class="project-item">
+        <h3>Predictive Modeling for Student Performance</h3>
+        <p>
+          Applied multiple regression analysis to predict student exam scores based on study habits, attendance, and
+          demographic factors. Achieved R² of 0.87 with comprehensive model diagnostics.
+        </p>
+        <p><em>Techniques: Multiple Linear Regression, Feature Engineering, Cross-Validation, VIF Analysis</em></p>
+      </div>
+
+      <div class="project-item">
+        <h3>A/B Testing for E-commerce Platform</h3>
+        <p>
+          Conducted hypothesis testing to evaluate the effectiveness of a new website design. Used two-sample t-tests
+          and chi-square tests to analyze conversion rates and user engagement metrics.
+        </p>
+        <p><em>Techniques: Hypothesis Testing, Statistical Significance, Effect Size, Sample Size Determination</em></p>
+      </div>
+
+      <div class="project-item">
+        <h3>Classification Model for Medical Diagnosis</h3>
+        <p>
+          Developed logistic regression model to classify patient outcomes. Performed ROC analysis and optimized
+          decision threshold for balanced sensitivity and specificity.
+        </p>
+        <p><em>Techniques: Logistic Regression, ROC/AUC Analysis, Cross-Validation, Model Calibration</em></p>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact-info">
+      <h2 style="color: white; border-bottom: 1px solid rgba(255, 255, 255, 0.3)">Get In Touch</h2>
+      <p>"Transforming data into insights through rigorous statistical analysis and computational methods"</p>
+      <div style="margin-top: 2rem">
+        <p><strong>Email:</strong> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="83faecf6f1ade6eee2eaefc3e6fbe2eef3efe6ade0ecee">[email&#160;protected]</a></p>
+        <p><strong>LinkedIn:</strong> linkedin.com/in/yourprofile</p>
+        <p><strong>GitHub:</strong> github.com/yourusername</p>
+      </div>
+    </section>
+  
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body></html>
