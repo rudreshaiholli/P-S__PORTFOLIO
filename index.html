@@ -1,97 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rudresh Aiholli | Portfolio</title>
-
-<link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name | Academic Portfolio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --accent: #3498db;
+            --bg-light: #f4f7f6;
+        }
+        body { padding: 2rem; background-color: var(--bg-light); }
+        .container { max-width: 900px; background: white; padding: 3rem; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        h1 { border-bottom: 4px solid var(--accent); display: inline-block; margin-bottom: 0.5rem; }
+        .badge { background: var(--accent); color: white; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.8rem; text-transform: uppercase; }
+        .chapter-card { border: 1px solid #e1e4e8; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem; transition: transform 0.2s; }
+        .chapter-card:hover { transform: translateY(-5px); border-color: var(--accent); }
+        pre { background: #2d3436; color: #fab1a0; padding: 1rem; border-radius: 6px; font-size: 0.9rem; }
+        .skill-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+    </style>
 </head>
-
 <body>
 
-<!-- Background Theme -->
-<div class="aurora-bg"></div>
-<div class="grid-overlay"></div>
+<main class="container">
+    <header style="text-align: center; margin-bottom: 3rem;">
+        <h1>Your Name</h1>
+        <p style="font-size: 1.2rem; color: #7f8c8d;">Data Scientist & Computational Researcher</p>
+        <div class="intro" style="font-style: italic; max-width: 600px; margin: 0 auto;">
+            "Specializing in the intersection of mathematical theory and practical software implementation."
+        </div>
+    </header>
 
-<!-- Cursor Glow -->
-<div class="cursor-glow"></div>
+    <section>
+        <h2>Academic Focus</h2>
+        <div style="background: #edf2f7; padding: 1rem; border-radius: 8px; margin-bottom: 2rem;">
+            <strong>Major:</strong> Computer Science / Statistics | <strong>Institution:</strong> University Name
+        </div>
+    </section>
 
-<header>
-  <nav>
-    <h2>Rudresh<span>.</span></h2>
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-</header>
+    <section>
+        <h2>Core Competencies</h2>
+        
+        <div class="chapter-card">
+            <div style="display: flex; justify-content: space-between;">
+                <h3>01. Neural Networks</h3>
+                <span class="badge">Deep Learning</span>
+            </div>
+            <p>Exploration of backpropagation, activation functions, and architecture design for CNNs and RNNs.</p>
+            <h5>Code Implementation (PyTorch):</h5>
+            <pre><code>import torch.nn as nn
 
-<section id="home" class="home">
-  <h1>Hi, I'm <span>Rudresh Aiholli</span></h1>
-  <h3>Computer Science Student & Problem Solver</h3>
-  <p>I design, code, and build clean solutions with logic & creativity.</p>
-  <a href="#projects" class="btn">View My Work</a>
-</section>
+class Net(nn.Module):
+    def __init__(self):
+        super(Net, self).__init__()
+        self.fc1 = nn.Linear(784, 128)
+        self.fc2 = nn.Linear(128, 10)</code></pre>
+        </div>
+    </section>
 
-<section id="about" class="section">
-  <h2>About Me</h2>
-  <p>
-    I am a Computer Science student passionate about algorithms, databases,
-    operating systems, and full-stack development. I enjoy converting complex
-    problems into elegant and efficient solutions.
-  </p>
-</section>
+    <section>
+        <h2>Technical Toolkit</h2>
+        <div class="skill-grid">
+            <div>
+                <strong>Languages</strong>
+                <ul>
+                    <li>Python (Expert)</li>
+                    <li>C++ (Intermediate)</li>
+                    <li>SQL</li>
+                </ul>
+            </div>
+            <div>
+                <strong>Frameworks</strong>
+                <ul>
+                    <li>TensorFlow / PyTorch</li>
+                    <li>Flask / Django</li>
+                    <li>React.js</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-<section id="skills" class="section">
-  <h2>Skills</h2>
-  <div class="skills-grid">
-    <div class="skill-card">HTML</div>
-    <div class="skill-card">CSS</div>
-    <div class="skill-card">JavaScript</div>
-    <div class="skill-card">Python</div>
-    <div class="skill-card">SQL</div>
-    <div class="skill-card">Linux</div>
-    <div class="skill-card">DSA</div>
-  </div>
-</section>
+    <footer style="margin-top: 4rem; text-align: center; border-top: 1px solid #eee; padding-top: 2rem;">
+        <h3>Connect With Me</h3>
+        <p>Email: name@example.com | LinkedIn: linkedin.com/in/username</p>
+    </footer>
+</main>
 
-<section id="projects" class="section">
-  <h2>Projects</h2>
-  <div class="projects-grid">
-    <div class="project-card">
-      <h3>Portfolio Website</h3>
-      <p>Modern responsive portfolio using HTML, CSS & JS.</p>
-    </div>
-    <div class="project-card">
-      <h3>Library Management System</h3>
-      <p>ER diagrams, SQL schema & normalization.</p>
-    </div>
-    <div class="project-card">
-      <h3>Linux OS Report</h3>
-      <p>Detailed academic documentation & architecture study.</p>
-    </div>
-  </div>
-</section>
-
-<section id="contact" class="section">
-  <h2>Contact Me</h2>
-  <p>📧 your-email@example.com</p>
-  <div class="socials">
-    <a href="#"><i class="fab fa-github"></i></a>
-    <a href="#"><i class="fab fa-linkedin"></i></a>
-  </div>
-</section>
-
-<footer>
-  <p>© 2026 Rudresh Aiholli  </p>
-</footer>
-
-<script src="script.js"></script>
 </body>
 </html>
