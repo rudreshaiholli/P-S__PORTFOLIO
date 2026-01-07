@@ -11,20 +11,34 @@ body{
   overflow-x:hidden;
 }
 
-/* Background animation */
-.bg-animation{
+/* ===== BACKGROUND THEME ===== */
+
+.aurora-bg{
   position:fixed;
   inset:0;
   background:
-    radial-gradient(circle at top left,#38bdf8,transparent 40%),
-    radial-gradient(circle at bottom right,#6366f1,transparent 40%);
-  z-index:-2;
-  animation:float 10s infinite alternate;
+    radial-gradient(circle at 20% 20%, rgba(56,189,248,0.35), transparent 40%),
+    radial-gradient(circle at 80% 30%, rgba(99,102,241,0.35), transparent 45%),
+    radial-gradient(circle at 50% 80%, rgba(139,92,246,0.30), transparent 45%);
+  filter:blur(60px);
+  animation:auroraMove 14s ease-in-out infinite alternate;
+  z-index:-3;
 }
 
-@keyframes float{
-  from{filter:blur(0);}
-  to{filter:blur(40px);}
+@keyframes auroraMove{
+  0%{transform:translate(0,0) scale(1);}
+  100%{transform:translate(-60px,40px) scale(1.15);}
+}
+
+/* Grid overlay */
+.grid-overlay{
+  position:fixed;
+  inset:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size:40px 40px;
+  z-index:-2;
 }
 
 /* Cursor Glow */
@@ -54,9 +68,7 @@ nav{
   align-items:center;
 }
 
-nav h2 span{
-  color:#38bdf8;
-}
+nav h2 span{color:#38bdf8;}
 
 nav ul{
   list-style:none;
@@ -70,9 +82,7 @@ nav ul li a{
   transition:0.3s;
 }
 
-nav ul li a:hover{
-  color:#38bdf8;
-}
+nav ul li a:hover{color:#38bdf8;}
 
 /* Hero */
 .home{
@@ -84,9 +94,7 @@ nav ul li a:hover{
   text-align:center;
 }
 
-.home span{
-  color:#38bdf8;
-}
+.home span{color:#38bdf8;}
 
 .btn{
   margin-top:25px;
@@ -120,8 +128,8 @@ nav ul li a:hover{
   padding:20px;
   text-align:center;
   border-radius:12px;
-  transition:transform 0.15s ease, box-shadow 0.15s ease;
   transform-style:preserve-3d;
+  transition:transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 /* Projects */
@@ -135,8 +143,8 @@ nav ul li a:hover{
   background:rgba(255,255,255,0.05);
   padding:25px;
   border-radius:16px;
-  transition:transform 0.15s ease, box-shadow 0.15s ease;
   transform-style:preserve-3d;
+  transition:transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 /* Footer */
