@@ -1,11 +1,37 @@
-function toggleTheme(){
-  const html = document.documentElement;
-  const newTheme = html.dataset.theme === "dark" ? "light" : "dark";
-  html.dataset.theme = newTheme;
-  localStorage.setItem("theme", newTheme);
-}
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<title>Probability & Statistics Portfolio</title>
+<link rel="stylesheet" href="style.css">
+<script src="theme.js"></script>
+</head>
 
-window.onload = () => {
-  const saved = localStorage.getItem("theme");
-  if(saved) document.documentElement.dataset.theme = saved;
-};
+<body>
+
+<div class="nav">
+  <div>
+    <a href="index.html">Home</a>
+    <a href="chapter1.html">Chapter 1</a>
+    <a href="chapter2.html">Chapter 2</a>
+    <a href="chapter3.html">Chapter 3</a>
+    <a href="chapter4.html">Chapter 4</a>
+  </div>
+  <div class="toggle" onclick="toggleTheme()">🌙 Theme</div>
+</div>
+
+<h1>Probability & Statistics</h1>
+<p><em>Interactive Student Learning Portfolio</em></p>
+
+<div class="card">
+<h3>What This Portfolio Shows</h3>
+<ul>
+  <li>Concepts I learned in Probability & Statistics</li>
+  <li>Interactive graphs for visual understanding</li>
+  <li>Hands-on lab reflections</li>
+  <li>Clean, modern UI</li>
+</ul>
+</div>
+
+</body>
+</html>
