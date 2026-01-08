@@ -1,45 +1,11 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="light">
-<head>
-<meta charset="UTF-8">
-<title>Probability & Statistics Portfolio</title>
-<link rel="stylesheet" href="style.css">
-<script src="theme.js"></script>
-</head>
+function toggleTheme(){
+  const html = document.documentElement;
+  const newTheme = html.dataset.theme === "dark" ? "light" : "dark";
+  html.dataset.theme = newTheme;
+  localStorage.setItem("theme", newTheme);
+}
 
-<body>
-
-<div class="nav">
-  <div>
-    <a href="index.html">Home</a>
-    <a href="chapter1.html">Chapter 1</a>
-    <a href="chapter2.html">Chapter 2</a>
-    <a href="chapter3.html">Chapter 3</a>
-    <a href="chapter4.html">Chapter 4</a>
-  </div>
-  <div class="toggle" onclick="toggleTheme()">🌙 Theme</div>
-</div>
-
-<h1>Probability & Statistics</h1>
-<p><em>Student Learning Portfolio</em></p>
-
-<div class="card">
-<h3>About This Portfolio</h3>
-<p>
-This portfolio documents what I learned in the Probability & Statistics course.
-Each chapter highlights key concepts, definitions, visual understanding, and lab reflections.
-</p>
-</div>
-
-<div class="card">
-<h3>Course Outcomes</h3>
-<ul>
-  <li>Understand and analyze data statistically</li>
-  <li>Apply probability concepts to real problems</li>
-  <li>Work with random variables and distributions</li>
-  <li>Perform statistical inference using sample data</li>
-</ul>
-</div>
-
-</body>
-</html>
+window.onload = () => {
+  const saved = localStorage.getItem("theme");
+  if(saved) document.documentElement.dataset.theme = saved;
+};
