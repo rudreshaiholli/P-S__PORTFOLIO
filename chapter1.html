@@ -5,6 +5,7 @@
 <title>Chapter 1 – Descriptive Statistics</title>
 <link rel="stylesheet" href="style.css">
 <script src="theme.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
@@ -22,27 +23,38 @@
 <div class="card">
 <h3>What I Learned</h3>
 <ul>
-  <li>How data can be summarized numerically</li>
-  <li>Difference between central tendency and dispersion</li>
-  <li>Importance of visualization</li>
+  <li>Mean, Median and Mode</li>
+  <li>Spread of data using variance and standard deviation</li>
+  <li>How graphs summarize data</li>
 </ul>
 </div>
 
 <div class="card">
-<h3>Visual Understanding</h3>
-<p>Histogram showing data distribution</p>
-<div class="graph"></div>
+<h3>Histogram (Interactive)</h3>
+<canvas id="histogram"></canvas>
 </div>
 
 <div class="card">
-<h3>Lab Work Reflection</h3>
+<h3>Lab Reflection</h3>
 <p>
-In this lab, I used Python to compute mean, median and standard deviation.
-Plotting histograms and box plots helped me visually understand data spread
-and identify outliers.
+Using Python and visual tools, I learned how histograms and box plots
+make data interpretation easier and more intuitive.
 </p>
 </div>
 
+<script>
+new Chart(document.getElementById("histogram"), {
+  type: "bar",
+  data: {
+    labels: ["0-10","10-20","20-30","30-40","40-50"],
+    datasets: [{
+      label: "Frequency",
+      data: [4, 9, 14, 7, 3],
+      backgroundColor: "#2563eb"
+    }]
+  }
+});
+</script>
+
 </body>
 </html>
-
